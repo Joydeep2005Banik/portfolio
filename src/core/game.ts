@@ -154,6 +154,8 @@ export class Game {
   public start(): void {
     this.loadSprite().then(() => {
       requestAnimationFrame(this.boundLoop);
+    }).catch((err) => {
+      console.error("Failed to start game:", err);
     });
   }
 }
